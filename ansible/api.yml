@@ -17,9 +17,9 @@
     - role: common-roles/django
       project_name: api.opencivicdata.org
       git_repositories:
-          - repo: "git://github.com/opencivicdata/api.opencivicdata.org.git"
+          - repo: "git://github.com/influence-usa/api.opencivicdata.org.git@disclosures"
             dir: api.opencivicdata.org
-          - repo: "git://github.com/opencivicdata/imago.git"
+          - repo: "git://github.com/influence-usa/imago.git@disclosures"
             dir: imago
       wsgi_module: ocdapi.wsgi:application
     - role: common-roles/https
