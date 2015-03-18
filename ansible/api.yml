@@ -1,11 +1,11 @@
 ---
 - name: Install api.opencivicdata.org
-  hosts: opencivicdata-api
+  hosts: influenceexplorer-api
   user: ubuntu
   sudo: yes
   roles:
     - role: common-roles/common
-      hostname: api.opencivicdata.org
+      hostname: api.influenceexplorer.com
       extra_packages:
         - libpq-dev
         - unzip
@@ -17,10 +17,12 @@
     - role: common-roles/django
       project_name: api.opencivicdata.org
       git_repositories:
-          - repo: "git://github.com/influence-usa/api.opencivicdata.org.git@disclosures"
+          - repo: "git://github.com/influence-usa/api.opencivicdata.org.git"
             dir: api.opencivicdata.org
-          - repo: "git://github.com/influence-usa/imago.git@disclosures"
+            version: disclosures
+          - repo: "git://github.com/influence-usa/imago.git"
             dir: imago
+            version: disclosures
       wsgi_module: ocdapi.wsgi:application
     - role: common-roles/https
       when: deploy_type != "vagrant"
