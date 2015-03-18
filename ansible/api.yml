@@ -1,6 +1,6 @@
 ---
 - name: Install api.opencivicdata.org
-  hosts: influenceexplorer-api
+  hosts: influenceexplorer_api
   user: ubuntu
   sudo: yes
   roles:
